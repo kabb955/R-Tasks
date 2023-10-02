@@ -15,4 +15,4 @@ pool:
 variables:
 - group: InstallRPackages
 jobs:
-- template: templates/build.yml
+- template: pipelines/templates/build.yml
