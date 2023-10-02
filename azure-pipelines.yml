@@ -16,8 +16,3 @@ variables:
 - group: InstallRPackages
 jobs:
 - template: templates/build.yml
-
-- task: InstallRPackages@0
-  displayName: Install R Packages
-  inputs:
-    rPackageNames: stringr, testthat
