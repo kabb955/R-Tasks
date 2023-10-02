@@ -7,16 +7,16 @@ resources:
   - pipeline: SmartHotel
     project: DevOpsProject
     source: SmartHotel-CI
-  trigger:
-    branches:
-      include:
-      - develop/*
-    paths:
-      include:
-      - RPackagesTask/*
-  pool:
-    vmImage: ubuntu-latest
-  variables:
-  - group: InstallRPackages
-  jobs:
-  - template: pipelines/templates/build.yml
+    trigger:
+      branches:
+        include:
+        - develop/*
+      paths:
+        include:
+        - RPackagesTask/*
+    pool:
+      vmImage: ubuntu-latest
+    variables:
+    - group: InstallRPackages
+    jobs:
+    - template: pipelines/templates/build.yml
