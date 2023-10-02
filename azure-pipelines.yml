@@ -2,17 +2,21 @@
 # Start with a minimal pipeline that you can customize to build and deploy your code.
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
-
-trigger:
-  branches:
-    include:
-    - develop/*
-  paths:
-    include:
-    - RPackagesTask/*
-pool:
-  vmImage: ubuntu-latest
-variables:
-- group: InstallRPackages
-jobs:
-- template: pipelines/templates/build.yml
+resources:
+  pipelines:
+  - pipeline: SmartHotel
+    project: DevOpsProject
+    source: SmartHotel-CI
+  trigger:
+    branches:
+      include:
+      - develop/*
+    paths:
+      include:
+      - RPackagesTask/*
+  pool:
+    vmImage: ubuntu-latest
+  variables:
+  - group: InstallRPackages
+  jobs:
+  - template: pipelines/templates/build.yml
