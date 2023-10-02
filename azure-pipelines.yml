@@ -5,7 +5,9 @@
 
 trigger:
 - master
-
+paths:
+  include:
+  - RPackagesTask/*
 pool:
   vmImage: ubuntu-latest
 
