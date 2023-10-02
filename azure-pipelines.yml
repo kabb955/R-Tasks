@@ -11,9 +11,6 @@ resources:
       branches:
         include:
         - develop/*
-      paths:
-        include:
-        - RPackagesTask/*
     pool:
       vmImage: ubuntu-latest
     variables:
