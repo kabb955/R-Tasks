@@ -4,13 +4,18 @@
 # https://aka.ms/yaml
 
 trigger:
-- master
-paths:
-  include:
-  - RPackagesTask/*
+  branches:
+    include:
+    - develop/*
+  paths:
+    include:
+    - RPackagesTask/*
 pool:
   vmImage: ubuntu-latest
-
+variables:
+- group: InstallRPackages
+jobs:
+- template: templates/build.yml
 steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
